@@ -19,12 +19,12 @@ version_update-close = 閉じる
 
 ## Tips
 
-tips-find_tracker = どのトラッカーがどれだかわからない？トラッカーを振ると、該当する項目がハイライトされます。
+tips-find_tracker = どれがどのトラッカーかわからなくなった場合は動かすことで項目が強調表示されます
 tips-do_not_move_heels = レコーディング中にかかとが動かないように注意しましょう！
 tips-file_select = 使用するファイルをドラッグ&ドロップするか、 <u>参照</u>します。
-tips-tap_setup = 追跡装置をゆっくり2回軽くタップして選択することができます、メニューから選ぶ必要はありません
+tips-tap_setup = トラッカーをゆっくり2回軽くタップして選択することができます、メニューから選ぶ必要はありません
 tips-turn_on_tracker = SlimeVRの公式トラッカーを使っていますか？トラッカーをPCに接続した後は<b><em>必ず電源を入れて</em></b>ください!
-tips-failed_webgl = WebGLの初期化に失敗しました。
+tips-failed_webgl = WebGLの初期化に失敗
 
 ## Body parts
 
@@ -40,7 +40,7 @@ body_part-RIGHT_LOWER_LEG = 右足
 body_part-RIGHT_FOOT = 右足先
 body_part-UPPER_CHEST = 上胸
 body_part-CHEST = 胸
-body_part-WAIST = 胴体
+body_part-WAIST = 胴
 body_part-HIP = 腰
 body_part-LEFT_SHOULDER = 左肩
 body_part-LEFT_UPPER_ARM = 左上腕
@@ -71,24 +71,61 @@ body_part-RIGHT_INDEX_DISTAL = 右人差指遠位部
 body_part-RIGHT_MIDDLE_PROXIMAL = 右中指近位部
 body_part-RIGHT_MIDDLE_INTERMEDIATE = 右中指中間部
 body_part-RIGHT_MIDDLE_DISTAL = 右中指遠位部
-body_part-RIGHT_RING_PROXIMAL = 右薬指近位部
-body_part-RIGHT_RING_INTERMEDIATE = 右薬指中間部
-body_part-RIGHT_RING_DISTAL = 右薬指遠位部
-body_part-RIGHT_LITTLE_PROXIMAL = 右小指近位部
-body_part-RIGHT_LITTLE_INTERMEDIATE = 右小指中間部
-body_part-RIGHT_LITTLE_DISTAL = 右小指遠位部
+body_part-RIGHT_RING_PROXIMAL = 右薬指第三関節
+body_part-RIGHT_RING_INTERMEDIATE = 右薬指第二関節
+body_part-RIGHT_RING_DISTAL = 右薬指第一関節
+body_part-RIGHT_LITTLE_PROXIMAL = 右小指第三関節
+body_part-RIGHT_LITTLE_INTERMEDIATE = 右小指第二関節
+body_part-RIGHT_LITTLE_DISTAL = 右小指第一関節
 
 ## BoardType
-
+board_type-UNKNOWN = Unknown
+board_type-NODEMCU = NodeMCU
+board_type-CUSTOM = Custom Board
+board_type-WROOM32 = WROOM32
+board_type-WEMOSD1MINI = Wemos D1 Mini
+board_type-TTGO_TBASE = TTGO T-Base
+board_type-ESP01 = ESP-01
+board_type-SLIMEVR = SlimeVR
+board_type-LOLIN_C3_MINI = Lolin C3 Mini
+board_type-BEETLE32C3 = Beetle ESP32-C3
+board_type-ESP32C3DEVKITM1 = Espressif ESP32-C3 DevKitM-1
+board_type-OWOTRACK = owoTrack
+board_type-WRANGLER = Wrangler Joycons
+board_type-MOCOPI = Sony Mocopi
+board_type-WEMOSWROOM02 = Wemos Wroom-02 D1 Mini
+board_type-XIAO_ESP32C3 = Seeed Studio XIAO ESP32C3
+board_type-HARITORA = Haritora
+board_type-ESP32C6DEVKITC1 = Espressif ESP32-C6 DevKitC-1
+board_type-GLOVE_IMU_SLIMEVR_DEV = SlimeVR Dev IMU Glove
 
 ## Proportions
 
 skeleton_bone-NONE = 無し
 skeleton_bone-HEAD = ヘッドシフト
+skeleton_bone-HEAD-desc =
+    これはヘッドセットから頭の中心までの距離です。
+    調整するには、反対するかのように頭を左右に振り
+    他のトラッカーの動きがほとんどなくなるまで調整します。
 skeleton_bone-NECK = 首長さ
+skeleton_bone-NECK-desc =
+    これは頭の中央から首の付け根までの距離です。
+    調整するには、うなずくように頭を上下に動かしたり
+    左右に傾けたりして、他のトラッカーの動きがほとんどなくなるまで調整します。
 skeleton_bone-torso_group = 胴体の長さ
+skeleton_bone-torso_group-desc =
+    これは首の付け根から腰までの距離です。
+    調整するには、まっすぐ立った状態で
+    仮想の腰が実際の腰と一直線になるまで調整します。
 skeleton_bone-UPPER_CHEST = 上胸の長さ
+skeleton_bone-UPPER_CHEST-desc =
+    これは首の付け根から胸の中央までの距離です。
+    調整するには、胴体の長さを適切に調整し、仮想の背骨が実際の背骨と一致するまで
+    様々な姿勢（座る、かがむ、横になるなど）で調整します。
 skeleton_bone-CHEST_OFFSET = 胸オフセット
+skeleton_bone-CHEST_OFFSET-desc =
+    This can be adjusted to move your virtual chest tracker up or down in order to aid
+    with calibration in certain games or applications that may expect it to be higher or lower.
 skeleton_bone-CHEST = 胸囲
 skeleton_bone-WAIST = ウエスト長さ
 skeleton_bone-HIP = ヒップ長さ
@@ -106,20 +143,28 @@ skeleton_bone-arm_group = 腕の長さ
 skeleton_bone-UPPER_ARM = 上腕長さ
 skeleton_bone-LOWER_ARM = 前腕長さ
 skeleton_bone-HAND_Y = 手の距離 Y
-skeleton_bone-HAND_Z = 手の距離Z
+skeleton_bone-HAND_Z = 手の距離 Z
 skeleton_bone-ELBOW_OFFSET = 肘オフセット
 
 ## Tracker reset buttons
-
 reset-reset_all = すべてのプロポーションをリセット
-reset-full = リセット
-reset-mounting = リセットマウンティング
-reset-yaw = ヨーリセット
+reset-reset_all_warning-v2 =
+    <b>警告:</b> 比率は、設定した高さに合わせてデフォルトにリセットされます。
+    本当に実行しますか?
+reset-reset_all_warning-reset = 実行
+reset-reset_all_warning-cancel = 中止
+reset-reset_all_warning_default-v2 =
+    <b>警告:</b> 身長が設定されていません。比率はデフォルトの身長にリセットされます。
+    本当に実行しますか?
+
+reset-full = フルリセット
+reset-mounting = 向きリセット
+reset-yaw = リセット
 
 ## Serial detection stuff
 
-serial_detection-new_device-p0 = 新しいシリアルデバイスを検出しました！
-serial_detection-new_device-p1 = Wi-Fiの認証情報を入力してください！
+serial_detection-new_device-p0 = シリアルデバイスを検出
+serial_detection-new_device-p1 = Wi-Fiの認証情報を入力
 serial_detection-new_device-p2 = 何をするか選択してください
 serial_detection-open_wifi = Wi-Fiに接続
 serial_detection-open_serial = シリアルコンソールを開く
@@ -129,65 +174,65 @@ serial_detection-close = 閉じる
 ## Navigation bar
 
 navbar-home = ホーム
-navbar-body_proportions = ボディプロポーション
-navbar-trackers_assign = トラッカー割り当て
-navbar-mounting = マウントキャリブレーション
-navbar-onboarding = セットアップ ウィザード
+navbar-body_proportions = 身体測定
+navbar-trackers_assign = トラッカー割当
+navbar-mounting = 向き調節
+navbar-onboarding = 初期設定画面
 navbar-settings = 設定
 
 ## Biovision hierarchy recording
 
-bvh-start_recording = BVHレコーディング
-bvh-recording = レコーディング中...
+bvh-start_recording = BVH記録
+bvh-recording = 記録中...
 
 ## Tracking pause
 
-tracking-unpaused = トラッキング停止
-tracking-paused = トラッキング再開
+tracking-unpaused = 動作停止
+tracking-paused = 動作再開
 
 ## Widget: Overlay settings
 
 widget-overlay = オーバーレイ設定
-widget-overlay-is_visible_label = SteamVRでオーバーレイを表示する
-widget-overlay-is_mirrored_label = オーバーレイをミラーとして表示する
+widget-overlay-is_visible_label = SteamVRでオーバーレイ表示
+widget-overlay-is_mirrored_label = オーバーレイをミラー表示
 
 ## Widget: Drift compensation
 
-widget-drift_compensation-clear = ドリフト補正をクリアする
+widget-drift_compensation-clear = ドリフト補正を初期化
 
 ## Widget: Clear Reset Mounting
 
-widget-clear_mounting = リセットマウンティングをクリア
+widget-clear_mounting = 向き調節　　　　　リセット
 
 ## Widget: Developer settings
 
 widget-developer_mode = 開発者モード
 widget-developer_mode-high_contrast = ハイ コントラスト
-widget-developer_mode-precise_rotation = 正確な回転角度を表示
-widget-developer_mode-fast_data_feed = 高速表示モード
-widget-developer_mode-filter_slimes_and_hmd = SlimeVRとHMDのみを表示
+widget-developer_mode-precise_rotation = 正確な回転角度
+widget-developer_mode-fast_data_feed = 高速表示
+widget-developer_mode-filter_slimes_and_hmd = SlimeVRとHMDのみ表示
 widget-developer_mode-sort_by_name = 表示名順
 widget-developer_mode-raw_slime_rotation = 元の回転角度
 widget-developer_mode-more_info = 他情報
 
 ## Widget: IMU Visualizer
 
-widget-imu_visualizer = 回転
-widget-imu_visualizer-rotation_raw = 生
-widget-imu_visualizer-rotation_preview = 生
+widget-imu_visualizer = 回転座標
+widget-imu_visualizer-rotation_raw = 生データ
+widget-imu_visualizer-rotation_preview = 生データ
 
 ## Widget: Skeleton Visualizer
 
-widget-skeleton_visualizer-preview = スケルトンプレビュー
+widget-skeleton_visualizer-preview = スケルトン表示
 widget-skeleton_visualizer-hide = 非表示
 
 ## Tracker status
 
 tracker-status-none = ステータスなし
-tracker-status-busy = Busy
+tracker-status-busy = 接続困難
 tracker-status-error = エラー
 tracker-status-disconnected = 切断
-tracker-status-occluded = Occluded
+tracker-status-occluded = 遮断
 tracker-status-ok = 接続中
 tracker-status-timed_out = タイムアウト
 
@@ -229,6 +274,11 @@ tracker-infos-hardware_identifier = ハードウェアID
 tracker-infos-imu = 慣性計測センサー
 tracker-infos-board_type = メインボード
 tracker-infos-network_version = プロトコル・バージョン
+tracker-infos-magnetometer-status-v1 = { $status ->
+    *[NOT_SUPPORTED] Not supported
+    [DISABLED] Disabled
+    [ENABLED] Enabled
+}
 
 ## Tracker settings
 
@@ -245,17 +295,17 @@ tracker-settings-drift_compensation_section-description = ドリフト補正が�
 tracker-settings-drift_compensation_section-edit = ドリフト補正を行う
 # Multiline!
 tracker-settings-use_mag-description =
-    このトラッカーは、マグネトメーターの使用が許可されている場合、ドリフトを減らすためにマグネトメーターを使用すべきですか？ <b>設定を切り替える際は、トラッカーをシャットダウンしないでください！</b>
-    
-    まず、マグネトメーターの使用を許可する必要があります。<magSetting>設定に移動するにはここをクリックしてください</magSetting>。
+    トラッカーに地磁気センサのサポートがあります <b>設定を適応する際はトラッカーの電源を入れたまま行ってください</b>
+
+    各トラッカーの地磁気センサ設定を有効にするにはロックを解除する必要があります<magSetting>設定画面に移動</magSetting>。
 # The .<name> means it's an attribute and it's related to the top key.
 # In this case that is the settings for the assignment section.
 tracker-settings-name_section = トラッカー名称
 tracker-settings-name_section-description = 自由に名称をつけてください
 tracker-settings-name_section-placeholder = NightyBeast's left leg
-tracker-settings-forget = フォーゲット・トラッカー
-tracker-settings-forget-description = スライムVRサーバーからトラッカーを削除し、サーバーが再起動するまで接続できないようにします。トラッカーの設定は失われません。
-tracker-settings-forget-label = フォーゲット・トラッカー
+tracker-settings-forget = 認識除外設定
+tracker-settings-forget-description = ソフトウエアの再起動をするまで一時的にトラッカーの認識を除外(設定は維持されます)
+tracker-settings-forget-label = 除外
 
 ## Tracker part card info
 
@@ -264,11 +314,11 @@ tracker-part_card-unassigned = 未割り当て
 
 ## Body assignment menu
 
-body_assignment_menu = このトラッカーをどこに配置しますか？
+body_assignment_menu = トラッカーを配置したい部位を選択
 body_assignment_menu-description = このトラッカーを割り当てる場所を選択します。また、トラッカーを一つずつ管理するのではなく、すべてのトラッカーを一括して管理することもできます。
-body_assignment_menu-show_advanced_locations = 高度な割り当て場所の表示
-body_assignment_menu-manage_trackers = すべてのトラッカーの管理
-body_assignment_menu-unassign_tracker = トラッカーの割り当て解除
+body_assignment_menu-show_advanced_locations = 高度な割当部位の表示
+body_assignment_menu-manage_trackers = すべてのトラッカー管理
+body_assignment_menu-unassign_tracker = トラッカー割り当て解除
 
 ## Tracker assignment menu
 
@@ -291,8 +341,8 @@ tracker_selection_menu-RIGHT_FOOT = { -tracker_selection-part(body-part: "右足
 tracker_selection_menu-RIGHT_CONTROLLER = { -tracker_selection-part(body-part: "右コントローラ") }
 tracker_selection_menu-UPPER_CHEST = { -tracker_selection-part } 上胸？
 tracker_selection_menu-CHEST = { -tracker_selection-part(body-part: "胸") }
-tracker_selection_menu-WAIST = { -tracker_selection-part(body-part: "腰") }
-tracker_selection_menu-HIP = { -tracker_selection-part(body-part: "ヒップ") }
+tracker_selection_menu-WAIST = { -tracker_selection-part(body-part: "胴") }
+tracker_selection_menu-HIP = { -tracker_selection-part(body-part: "腰") }
 tracker_selection_menu-LEFT_SHOULDER = { -tracker_selection-part(body-part: "左肩") }
 tracker_selection_menu-LEFT_UPPER_ARM = { -tracker_selection-part(body-part: "左上腕") }
 tracker_selection_menu-LEFT_LOWER_ARM = { -tracker_selection-part(body-part: "左前腕") }
@@ -319,7 +369,7 @@ mounting_selection_menu-close = 閉じる
 
 settings-sidebar-title = 設定
 settings-sidebar-general = 一般
-settings-sidebar-tracker_mechanics = トラッカーメカニズム
+settings-sidebar-tracker_mechanics = トラッカー挙動
 settings-sidebar-fk_settings = FK設定
 settings-sidebar-gesture_control = ジェスチャーコントロール
 settings-sidebar-interface = インターフェース
@@ -329,6 +379,10 @@ settings-sidebar-utils = ユーティリティ
 settings-sidebar-serial = シリアルコンソール
 settings-sidebar-appearance = 外観
 settings-sidebar-notifications = 通知
+settings-sidebar-behavior = 動作
+settings-sidebar-firmware-tool = 自作トラッカーツール
+settings-sidebar-vrc_warnings = VRChat設定の警告
+settings-sidebar-advanced = 高度な設定
 
 ## SteamVR settings
 
@@ -347,12 +401,12 @@ settings-general-steamvr-trackers-tracker_toggling-description = 現在のトラ
 settings-general-steamvr-trackers-hands-warning =
     <b>警告：</b> ハンドトラッカーはコントローラーを上書きします。
     よろしいですか？
-settings-general-steamvr-trackers-hands-warning-cancel = キャンセル
+settings-general-steamvr-trackers-hands-warning-cancel = 中止
 settings-general-steamvr-trackers-hands-warning-done = はい
 
 ## Tracker mechanics
 
-settings-general-tracker_mechanics = トラッカーメカニズム
+settings-general-tracker_mechanics = トラッカー挙動
 settings-general-tracker_mechanics-filtering = フィルター機能
 # This also cares about multilines
 settings-general-tracker_mechanics-filtering-description =
@@ -361,15 +415,15 @@ settings-general-tracker_mechanics-filtering-description =
 settings-general-tracker_mechanics-filtering-type = フィルタータイプ
 settings-general-tracker_mechanics-filtering-type-none = フィルター無し
 settings-general-tracker_mechanics-filtering-type-none-description = トラッカーの値をそのまま使用します。フィルタリングは行いません。
-settings-general-tracker_mechanics-filtering-type-smoothing = スムージング
+settings-general-tracker_mechanics-filtering-type-smoothing = Smoothing
 settings-general-tracker_mechanics-filtering-type-smoothing-description = 動きを滑らかにしますが、若干の遅れが発生します
-settings-general-tracker_mechanics-filtering-type-prediction = プリディクション
-settings-general-tracker_mechanics-filtering-type-prediction-description = レイテンシーを減らし、動きをよりキビキビさせますが、ジッターが増加する場合があります。
+settings-general-tracker_mechanics-filtering-type-prediction = Prediction
+settings-general-tracker_mechanics-filtering-type-prediction-description = 遅延が少ないが乱れが増加する傾向がある。
 settings-general-tracker_mechanics-filtering-amount = 数値
 settings-general-tracker_mechanics-drift_compensation = ドリフト補正
 # This cares about multilines
 settings-general-tracker_mechanics-drift_compensation-description =
-    逆回転をかけることで IMU のヨー軸ドリフトを補正します。
+    逆回転をかけることで IMU のyaw軸のドリフトを補正します。
     補正量とリセット回数を変更します。
 settings-general-tracker_mechanics-drift_compensation-enabled-label = ドリフト補正
 settings-general-tracker_mechanics-drift_compensation-amount-label = 補正量
@@ -386,11 +440,11 @@ settings-general-fk_settings-leg_tweak-floor_clip = フロアクリップ
 # why the name - without this enabled the feet will often slide across the ground as if your skating across the ground,
 # since this largely prevents this it corrects for it hence skating correction (note this may be renamed to sliding correction)
 # definition - Guesses when each foot is in contact with the ground and uses that information to improve tracking
-settings-general-fk_settings-leg_tweak-skating_correction = スケーティング補正
+settings-general-fk_settings-leg_tweak-skating_correction = 滑り補正
 settings-general-fk_settings-leg_tweak-foot_plant = 足の着地
-settings-general-fk_settings-leg_tweak-skating_correction-amount = スケーティング補正の強さ
-settings-general-fk_settings-leg_tweak-skating_correction-description = スケート補正はアイススケートを補正しますが、特定の動きでは精度が低下する場合があります。これを有効にする際は、フルリセットし、ゲーム内で再校正してください。
-settings-general-fk_settings-leg_tweak-floor_clip-description = フロアクリップを有効にすると、床を通り抜けることを減少させるか、完全に排除できます。これを有効にする際は、フルリセットし、ゲーム内で再校正してください。
+settings-general-fk_settings-leg_tweak-skating_correction-amount = 滑り補正の強さ
+settings-general-fk_settings-leg_tweak-skating_correction-description = 滑り補正は特定の動きにおいては精度が低下する場合があります。これを有効にする際は、フルリセットし、ゲーム内で再キャリブレーションしてください。
+settings-general-fk_settings-leg_tweak-floor_clip-description = フロアクリップを有効にすると、床を通り抜けることを減少させるか、完全に排除できます。これを有効にする際は、フルリセットし、ゲーム内で再キャリブレーションしてください。
 settings-general-fk_settings-leg_tweak-toe_snap-description = 足指スナップは足トラッカーを使用していない場合、足の回転を推測しようとします。
 settings-general-fk_settings-leg_tweak-foot_plant-description = 足の着地は足が地面に接触したときに足を地面に平行に回転させます。
 settings-general-fk_settings-leg_fk = 足のトラッキング
@@ -482,8 +536,8 @@ settings-serial-description =
     シリアル通信のライブ情報フィードです。
     ファームウェアの動作を知る必要がある場合に有用かもしれません。
 settings-serial-connection_lost = シリアルへの接続が失われました、再接続中...
-settings-serial-reboot = リブート
-settings-serial-factory_reset = ファクトリーリセット
+settings-serial-reboot = 再起動
+settings-serial-factory_reset = 工場出荷状態に戻す
 settings-serial-factory_reset-warning-ok = 自分が何しているかを知っています。
 settings-serial-factory_reset-warning-cancel = キャンセル
 settings-serial-get_infos = 情報取得
@@ -497,9 +551,9 @@ settings-osc-router = OSCルーター
 settings-osc-router-description =
     他のプログラムからの OSC メッセージを転送します。
     例えば、VRChat で他の OSC プログラムを使用する場合に便利です。
-settings-osc-router-enable = 有効
+settings-osc-router-enable = 機能スイッチ
 settings-osc-router-enable-description = メッセージの転送を切り替えます。
-settings-osc-router-enable-label = 有効
+settings-osc-router-enable-label = 有効化
 settings-osc-router-network = ネットワークポート
 # This cares about multilines
 settings-osc-router-network-description =
@@ -518,10 +572,23 @@ settings-osc-router-network-address-placeholder = IPV4アドレス
 ## OSC VRChat settings
 
 settings-osc-vrchat = VRChat OSCトラッカー
-settings-osc-vrchat-enable = 有効
+# This cares about multilines
+settings-osc-vrchat-description-v1 =
+    SteamVR 非対応のアプリケーション（例：Quest 単体）に
+    トラッキングデータを送信するために使用される OSC トラッカー標準固有の設定を変更します。
+    VRChat のアクションメニューで「OSC > 有効」を選択し、OSC を有効にしてください。
+settings-osc-vrchat-enable = 機能スイッチ
 settings-osc-vrchat-enable-description = データの送受信を切り替える。
-settings-osc-vrchat-enable-label = 有効
+settings-osc-vrchat-enable-label = 有効化
+settings-osc-vrchat-oscqueryEnabled = OSCクエリ
+settings-osc-vrchat-oscqueryEnabled-description =
+    OSCクエリは実行中のVRChatを自動的に検出し、データを送信します。
+    また、HMDとコントローラーのデータを受信するために、自身をVRChatに通知することもできます。
+    VRChatからHMDとコントローラーのデータを受信するには、メインメニューの設定で「トラッキングとIK」を開き、
+    「頭部と手首のVRトラッキングOSCデータの送信を許可する」を有効にしてください。
+settings-osc-vrchat-oscqueryEnabled-label = 有効化
 settings-osc-vrchat-network = ネットワークポート
+settings-osc-vrchat-network-description-v1 = データの受信と送信に使用するポートを設定します（VRChatで使用する場合、設定変更は不要）
 settings-osc-vrchat-network-port_in =
     .label = ポートイン
     .placeholder = ポートイン (デフォルト: 9001)
@@ -529,6 +596,7 @@ settings-osc-vrchat-network-port_out =
     .label = ポートアウト
     .placeholder = ポートアウト (デフォルト: 9000)
 settings-osc-vrchat-network-address = ネットワークアドレス
+settings-osc-vrchat-network-address-description-v1 = データの送信先アドレスを選択します（VRChatで使用する場合、設定変更は不要）
 settings-osc-vrchat-network-address-placeholder = VRChatのIPアドレス
 settings-osc-vrchat-network-trackers = トラッカー
 settings-osc-vrchat-network-trackers-description = データの送受信を切り替える。
@@ -541,29 +609,59 @@ settings-osc-vrchat-network-trackers-elbows = 肘
 ## VMC OSC settings
 
 settings-osc-vmc = バーチャルモーションキャプチャ
-settings-osc-vmc-enable = 有効
-settings-osc-vmc-enable-label = 有効
+settings-osc-vmc-enable = 機能スイッチ
+settings-osc-vmc-enable-label = 有効化
 settings-osc-vmc-network = ネットワークポート
 settings-osc-vmc-network-port_in =
     .label = ポートイン
-    .placeholder = ポートイン（デフォルト：３９５４０）
+    .placeholder = ポートイン（デフォルト：39540）
 settings-osc-vmc-network-port_out =
     .label = ポートアウト
-    .placeholder = ポートアウト（デフォルト：３９５３９）
+    .placeholder = ポートアウト（デフォルト：39539）
 settings-osc-vmc-network-address = ネットワークアドレス
 settings-osc-vmc-network-address-placeholder = IPV4アドレス
 settings-osc-vmc-vrm = VRMモデル
 
 ## Advanced settings
+settings-utils-advanced = 高度な設定
 
+settings-utils-advanced-reset-gui = UI設定を初期化
+settings-utils-advanced-reset-gui-description = UI設定をデフォルト設定に戻す
+settings-utils-advanced-reset-gui-label = 初期化
+settings-utils-advanced-reset-server = トラッキング設定を初期化
+settings-utils-advanced-reset-server-description = トラッキング設定をデフォルト設定に戻す
+settings-utils-advanced-reset-server-label = 初期化
+settings-utils-advanced-reset-all = 全ての設定を初期化
+settings-utils-advanced-reset-all-description = UIとトラッキングの両方の設定をデフォルト設定に戻す
+settings-utils-advanced-reset-all-label = 初期化
+settings-utils-advanced-reset_warning =
+        <b>警告:</b>  { $type ->
+            [gui] UI
+            [server] トラッキング
+            *[all] 全ての
+        } 設定をデフォルトに戻します。
+        本当によろしいですか？
+settings-utils-advanced-reset_warning-reset = 設定を初期化
+settings-utils-advanced-reset_warning-cancel = 中断
+
+settings-utils-advanced-open_data-v1 = 設定データ保存フォルダ
+settings-utils-advanced-open_data-description-v1 = SlimeVRの設定データの保存フォルダを開く
+settings-utils-advanced-open_data-label = 保存フォルダを開く
+settings-utils-advanced-open_logs = ログデータ保存フォルダ
+settings-utils-advanced-open_logs-description = SlimeVRのログデータの保存フォルダを開く
+settings-utils-advanced-open_logs-label = 保存フォルダを開く
 
 ## Setup/onboarding menu
 
-onboarding-skip = 設定をスキップする
-onboarding-continue = 続ける
+onboarding-skip = 設定をスキップ
+onboarding-continue = 再開
 onboarding-wip = 実行中
-onboarding-setup_warning-skip = セットアップをスキップする
-onboarding-setup_warning-cancel = セットアップを続行する
+onboarding-previous_step = Previous step
+onboarding-setup_warning =
+    <b>警告:</b> SlimeVRを初めて使用する場合、
+    適切なトラッキングを行うには初期設定が必要です
+onboarding-setup_warning-skip = スキップ
+onboarding-setup_warning-cancel = 続行
 
 ## Wi-Fi setup
 
@@ -584,7 +682,7 @@ onboarding-wifi_creds-password =
 
 ## Mounting setup
 
-onboarding-reset_tutorial-back = マウントキャリブレーションに戻る
+onboarding-reset_tutorial-back = 向き調節設定に戻る
 onboarding-reset_tutorial = リセットチュートリアル
 onboarding-reset_tutorial-skip = ステップをスキップする
 
@@ -634,10 +732,10 @@ onboarding-connect_tracker-next = すべてのトラッカーを接続しまし�
 ## Tracker calibration tutorial
 
 onboarding-calibration_tutorial = IMU校正チュートリアル
-onboarding-calibration_tutorial-subtitle = これにより、センサーのドリフトを減らすことが役立ちます
+onboarding-calibration_tutorial-subtitle = センサのドリフトの軽減に有効な設定です
 onboarding-calibration_tutorial-status-waiting = あなたを待っている...
 onboarding-calibration_tutorial-status-calibrating = 校正中
-onboarding-calibration_tutorial-status-success = ナイス!
+onboarding-calibration_tutorial-status-success = 校正完了
 
 ## Tracker assignment tutorial
 
@@ -661,10 +759,81 @@ onboarding-assign_trackers-advanced = 高度な割り当て場所の表示
 onboarding-assign_trackers-next = すべてのトラッカーを割り当てました
 
 ## Tracker assignment warnings
-
+# Note for devs, number is used for representing boolean states per bit.
+# $unassigned (Number) - Bits are based on BodyAssignment.ASSIGNMENT_RULES order
+onboarding-assign_trackers-warning-LEFT_FOOT = 左足が割り当てられていますが { $unassigned ->
+    [0] 左足首、左太もも、胸、腰、または胴のいずれか
+    [1] 左太もも、胸、腰、または胴
+    [2] the left ankle and either the chest, hip or waist
+    [3] either the chest, hip or waist
+    [4] the left ankle and left thigh
+    [5] the left thigh
+    [6] the left ankle
+    *[unknown] 不明な未割り当ての身体部位
+} も割り当てられます！
+# $unassigned (Number) - Bits are based on BodyAssignment.ASSIGNMENT_RULES order
+onboarding-assign_trackers-warning-RIGHT_FOOT = Right foot is assigned but you need { $unassigned ->
+    [0] the right ankle, right thigh and either the chest, hip or waist
+    [1] the right thigh and either the chest, hip or waist
+    [2] the right ankle and either the chest, hip or waist
+    [3] either the chest, hip or waist
+    [4] the right ankle and right thigh
+    [5] the right thigh
+    [6] the right ankle
+    *[unknown] Unknown unassigned body part
+} to also be assigned!
+# $unassigned (Number) - Bits are based on BodyAssignment.ASSIGNMENT_RULES order
+onboarding-assign_trackers-warning-LEFT_LOWER_LEG = Left ankle is assigned but you need { $unassigned ->
+    [0] the left thigh and either the chest, hip or waist
+    [1] either the chest, hip or waist
+    [2] the left thigh
+    *[unknown] Unknown unassigned body part
+} to also be assigned!
+# $unassigned (Number) - Bits are based on BodyAssignment.ASSIGNMENT_RULES order
+onboarding-assign_trackers-warning-RIGHT_LOWER_LEG = Right ankle is assigned but you need { $unassigned ->
+    [0] the right thigh and either the chest, hip or waist
+    [1] either the chest, hip or waist
+    [2] the right thigh
+    *[unknown] Unknown unassigned body part
+} to also be assigned!
+# $unassigned (Number) - Bits are based on BodyAssignment.ASSIGNMENT_RULES order
+onboarding-assign_trackers-warning-LEFT_UPPER_LEG = Left thigh is assigned but you need { $unassigned ->
+    [0] either the chest, hip or waist
+    *[unknown] Unknown unassigned body part
+} to also be assigned!
+# $unassigned (Number) - Bits are based on BodyAssignment.ASSIGNMENT_RULES order
+onboarding-assign_trackers-warning-RIGHT_UPPER_LEG = Right thigh is assigned but you need { $unassigned ->
+    [0] either the chest, hip or waist
+    *[unknown] Unknown unassigned body part
+} to also be assigned!
+# $unassigned (Number) - Bits are based on BodyAssignment.ASSIGNMENT_RULES order
+onboarding-assign_trackers-warning-HIP = Hip is assigned but you need { $unassigned ->
+    [0] the chest
+    *[unknown] Unknown unassigned body part
+} to also be assigned!
+# $unassigned (Number) - Bits are based on BodyAssignment.ASSIGNMENT_RULES order
+onboarding-assign_trackers-warning-WAIST = Waist is assigned but you need { $unassigned ->
+    [0] the chest
+    *[unknown] Unknown unassigned body part
+} to also be assigned!
 
 ## Tracker mounting method choose
-
+onboarding-choose_mounting = キャリブレーション方法を選択
+# Multiline text
+onboarding-choose_mounting-description = トラッカーの向きを合わせます
+onboarding-choose_mounting-auto_mounting = 自動設定
+# Italicized text
+onboarding-choose_mounting-auto_mounting-label-v2 = 推奨
+onboarding-choose_mounting-auto_mounting-description = 2つのポーズを取って装着したトラッカーの向きを合わせます
+onboarding-choose_mounting-manual_mounting = 手動設定
+# Italicized text
+onboarding-choose_mounting-manual_mounting-label-v2 = 上級者向け
+onboarding-choose_mounting-manual_mounting-description = トラッカーの向きを手動調節
+# Multiline text
+onboarding-choose_mounting-manual_modal-title = 本当に実行しますか？
+    自動マウントキャリブレーション？
+onboarding-choose_mounting-manual_modal-description = <b>新規ユーザーには手動マウント キャリブレーションが推奨されます</b>。自動マウント キャリブレーションのポーズは最初は正しく設定するのが難しく、ある程度の練習が必要になる場合があるためです。
+onboarding-choose_mounting-manual_modal-confirm = I'm sure of what I'm doing
 onboarding-choose_mounting-manual_modal-cancel = キャンセル
 
 ## Tracker manual mounting setup
@@ -672,21 +841,21 @@ onboarding-choose_mounting-manual_modal-cancel = キャンセル
 onboarding-manual_mounting-back = VRの入力に戻る
 onboarding-manual_mounting = マニュアルマウント
 onboarding-manual_mounting-description = すべてのトラッカーをクリックし、どの方向にマウントするかを選択
-onboarding-manual_mounting-auto_mounting = 自動マウント
-onboarding-manual_mounting-next = 次のステップ
+onboarding-manual_mounting-auto_mounting = 自動調節
+onboarding-manual_mounting-next = 次へ
 
 ## Tracker automatic mounting setup
 
 onboarding-automatic_mounting-back = VRの入力に戻る
 onboarding-automatic_mounting-title = マウントキャリブレーション
 onboarding-automatic_mounting-description = SlimeVRのトラッカーを動作させるためには、物理的なトラッカーの取り付け位置と合わせるために、トラッカーの取り付け方向を合わせる必要があります。
-onboarding-automatic_mounting-manual_mounting = マニュアルマウント
-onboarding-automatic_mounting-next = 次のステップ
-onboarding-automatic_mounting-prev_step = 前のステップ
-onboarding-automatic_mounting-done-title = 取り付け方向の較正を行いました。
-onboarding-automatic_mounting-done-description = マウントのキャリブレーションが完了しました！
+onboarding-automatic_mounting-manual_mounting = 手動調節
+onboarding-automatic_mounting-next = 次へ
+onboarding-automatic_mounting-prev_step = 前に戻る
+onboarding-automatic_mounting-done-title = 向きの調節を行いました
+onboarding-automatic_mounting-done-description = 向きの調節完了
 onboarding-automatic_mounting-done-restart = 最初に戻る
-onboarding-automatic_mounting-mounting_reset-title = マウントリセット
+onboarding-automatic_mounting-mounting_reset-title = 向きリセット
 onboarding-automatic_mounting-mounting_reset-step-0 = 1. 足を曲げ、上体を前に倒し、腕を曲げた状態で、スキーのポーズでしゃがむ。
 onboarding-automatic_mounting-mounting_reset-step-1 = 2. リセットマウンティングボタンを押し、3秒待つと装着方向がリセットされます。
 onboarding-automatic_mounting-preparation-title = 準備
@@ -698,32 +867,65 @@ onboarding-automatic_mounting-put_trackers_on-next = すべてのトラッカー
 
 ## Tracker manual proportions setupa
 
-onboarding-manual_proportions-back = チュートリアルをリセットする
-onboarding-manual_proportions-title = マニュアルボディプロポーション
-onboarding-manual_proportions-precision = 精度を調整する
-onboarding-manual_proportions-auto = 自動キャリブレーション
+onboarding-manual_proportions-back = チュートリアルをリセット
+onboarding-manual_proportions-title = 体型の手動調節
+onboarding-manual_proportions-precision = 精度を調整
+onboarding-manual_proportions-auto = 自動調節
 
 ## Tracker automatic proportions setup
 
-onboarding-automatic_proportions-back = チュートリアルをリセットする
+onboarding-automatic_proportions-back = チュートリアルをリセット
 onboarding-automatic_proportions-title = 自分の体の測定
-onboarding-automatic_proportions-description = SlimeVRのトラッカーが動作するためには、あなたの骨の長さを知る必要があります。この短いキャリブレーションでそれを測定します。
+onboarding-automatic_proportions-description = 体を測定することでSlimeVRトラッカーの動作を最適化します
 onboarding-automatic_proportions-manual = 手動調整
-onboarding-automatic_proportions-prev_step = 前のステップ
-onboarding-automatic_proportions-put_trackers_on-title = トラッカーを装着する
-onboarding-automatic_proportions-put_trackers_on-description = プロポーションを調整するために、先ほど割り当てたトラッカーを使用します。右の図で、どれがどのトラッカーかわかると思います。
+onboarding-automatic_proportions-prev_step = 前に戻る
+onboarding-automatic_proportions-put_trackers_on-title = トラッカーを装着
+onboarding-automatic_proportions-put_trackers_on-description = プロポーションを調整するために、先ほど割り当てたトラッカーを使用します。右の図でトラッカーの位置を確認できます
 onboarding-automatic_proportions-put_trackers_on-next = すべてのトラッカーを装着しました
 onboarding-automatic_proportions-requirements-title = 要件
 onboarding-automatic_proportions-requirements-next = 要件を読みました
+# Each line of text is a different list item
+onboarding-automatic_proportions-requirements-descriptionv2 =
+    少なくとも、足を追跡するのに十分な数のトラッカーが必要です (最低5つ必要)
+    トラッカーとヘッドセットを装着しています。
+    トラッカーとヘッドセットは SlimeVR サーバーに接続されており、正常に動作しています (例: 途切れや切断などはありません)。
+    ヘッドセットは、位置データを SlimeVR サーバーに送信しています (これは通常、SteamVR が実行され、SlimeVR の SteamVR ドライバーを使用して SlimeVR に接続されていることを意味します)
+    トラッキングが機能し、動きを正確に反映しています (例: 完全なリセットを実行すると、蹴ったり、かがんだり、座ったりするときに正しい方向に動きます)
+onboarding-automatic_proportions-requirements-next = 要件を読みました
+
+onboarding-automatic_proportions-check_height-title-v3 = VRヘッドセットの高さ
+onboarding-automatic_proportions-check_height-description-v2 = VRヘッドセットの高さは、目の高さを測るため、身長よりわずかに低く設定してください。この高さが、あなたの体型の基準となります。
+# All the text is in bold!
+onboarding-automatic_proportions-check_height-calculation_warning-v3 = 身長を測るには、まず<u>直立</u>した状態で測定を始めます。ヘッドセットより手を高く上げすぎると、測定に影響が出る可能性があるため、ご注意ください。
+onboarding-automatic_proportions-check_height-guardian_tip = スタンドアロンVRヘッドセットを使用している場合は、高さが正しくなるように /
+    ガーディアン設定がオンになっていることを確認してください。
+# Shows an element below it
+onboarding-automatic_proportions-check_height-hmd_height2 = VRヘッドセットの高さ:
+onboarding-automatic_proportions-check_height-measure-start = 測定開始
+onboarding-automatic_proportions-check_height-measure-stop = 測定停止
+onboarding-automatic_proportions-check_height-measure-reset = 再度測定
+onboarding-automatic_proportions-check_height-next_step = VRヘッドセットの高さを使用
+
+onboarding-automatic_proportions-check_floor_height-title = 床の高さを測る（オプション）
+onboarding-automatic_proportions-check_floor_height-description = VRヘッドセットによって床の高さが正しく設定されていない場合、VRヘッドセットの高さが実際よりも高く測定されることがあります。床の高さを測定することで、VRヘッドセットの高さを修正できます。
 # Context is that the height is unknown
 onboarding-automatic_proportions-check_height-unknown = 不明
 onboarding-automatic_proportions-start_recording-title = 測定の準備をする
 onboarding-automatic_proportions-start_recording-description = これから具体的なポーズや動きを記録します。これらは次の画面に表示されます。ボタンが押されたらすぐに始められるように準備しておいてください！
-onboarding-automatic_proportions-start_recording-next = レコーディングスタート
+onboarding-automatic_proportions-start_recording-next = 測定開始
 onboarding-automatic_proportions-recording-title = REC
 onboarding-automatic_proportions-recording-description-p0 = レコーディング中...
 onboarding-automatic_proportions-recording-description-p1 = 以下に示すような動きをします。
 onboarding-automatic_proportions-recording-processing = 結果を処理中
+# Each line of text is a different list item
+onboarding-automatic_proportions-recording-steps =
+    Standing up straight, roll your head in a circle.
+    Bend your back forwards and squat. While squatting, look to your left, then to your right.
+    Twist your upper body to the left (counter-clockwise), then reach down towards the ground.
+    Twist your upper body to the right (clockwise), then reach down towards the ground.
+    Roll your hips in a circular motion as if you're using a hula hoop.
+    If there is time left on the recording, you can repeat these steps until it's finished.
+onboarding-automatic_proportions-recording-processing = Processing the result
 # $time (Number) - Seconds left for the automatic calibration recording to finish (max 20)
 onboarding-automatic_proportions-recording-timer =
     { $time ->
@@ -741,7 +943,20 @@ onboarding-automatic_proportions-done-description = ボディプロポーショ�
 onboarding-automatic_proportions-error_modal-confirm = 了解!
 
 ## Tracker scaled proportions setup
-
+onboarding-scaled_proportions-title = スケール比率
+onboarding-scaled_proportions-description = 体を測定することでSlimeVRトラッカーの動作を最適化します
+onboarding-scaled_proportions-manual_height-title = 高さ設定
+onboarding-scaled_proportions-manual_height-description-v2 = この身長は、体の比率の基準として使用されます。
+onboarding-scaled_proportions-manual_height-missing_steamvr = SlimeVR は現在 SteamVR に接続されていないため、ヘッドセットに基づいて測定を行うことはできません。 自己責任で続行するか <b>ドキュメントを確認してください</b>
+onboarding-scaled_proportions-manual_height-height-v2 = 身長を入力
+onboarding-scaled_proportions-manual_height-estimated_height = ヘッドセットまでの高さの推定値は:
+onboarding-scaled_proportions-manual_height-next_step = 続行して保存
+onboarding-scaled_proportions-manual_height-warning =
+    現在、スケール比率を設定するための手動の方法を使用しています。
+    <b>このモードは、SlimeVRでHMDを使用しない場合にのみ推奨されます。</b>
+    自動スケール比率を使用するには:
+onboarding-scaled_proportions-manual_height-warning-no_hmd = VRヘッドセットを接続する
+onboarding-scaled_proportions-manual_height-warning-no_controllers = コントローラーが接続され、正しく手に割り当てられていることを確認してください
 
 ## Tracker scaled proportions reset
 
@@ -763,38 +978,243 @@ status_system-StatusSteamVRDisconnected =
         [steamvr_feeder] SlimeVR Feederアプリに接続されていません
        *[other] SlimeVRドライバ経由でSteamVRに接続されていません
     }
-status_system-StatusTrackerError = { $trackerName } トラッカーにエラーが発生しています
+status_system-StatusTrackerError = { $trackerName } トラッカーにエラーが発生
 
 ## Firmware tool globals
+firmware_tool-next_step = 次へ
+firmware_tool-previous_step = 前に戻る
+firmware_tool-ok = Looks good
+firmware_tool-retry = 再試行
 
+firmware_tool-loading = ロード中...
 
 ## Firmware tool Steps
+firmware_tool = 自作ファームウエアツール
+firmware_tool-description =
+    自作トラッカーのファームウエア設定と書き込みができます
+firmware_tool-not_available = 申し訳ございません。ファームウェアツールは現在ご利用いただけません。後ほど再度お試しください。
+firmware_tool-not_compatible = ファームウェアツールはこのバージョンのサーバーと互換性がありません。サーバーを更新してください。
+
+firmware_tool-board_step = ボードを選択
+firmware_tool-board_step-description = 下記のボードのいずれかを選択
+
+firmware_tool-board_pins_step = ピンを確認する
+firmware_tool-board_pins_step-description =
+    選択したピンが正しいことを確認してください。
+    SlimeVRのドキュメントを参考に作成した場合はデフォルトの値を使用
+firmware_tool-board_pins_step-enable_led = LED有効
+firmware_tool-board_pins_step-led_pin =
+    .label = LED Pin
+    .placeholder = LEDを接続しているGPIOを入力
+
+firmware_tool-board_pins_step-battery_type = バッテリーの種類を選択
+firmware_tool-board_pins_step-battery_type-BAT_EXTERNAL = 外部バッテリー
+firmware_tool-board_pins_step-battery_type-BAT_INTERNAL = 内蔵バッテリー
+firmware_tool-board_pins_step-battery_type-BAT_INTERNAL_MCP3021 = Internal MCP3021
+firmware_tool-board_pins_step-battery_type-BAT_MCP3021 = MCP3021
+
+
+firmware_tool-board_pins_step-battery_sensor_pin =
+    .label = バッテリー計測 Pin
+    .placeholder = バッテリー計測のGPIOを入力
+firmware_tool-board_pins_step-battery_resistor =
+    .label = Battery Resistor (Ohms)
+    .placeholder = Enter the value of battery resistor
+firmware_tool-board_pins_step-battery_shield_resistor-0 =
+    .label = Battery Shield R1 (Ohms)
+    .placeholder = Enter the value of Battery Shield R1
+firmware_tool-board_pins_step-battery_shield_resistor-1 =
+    .label = Battery Shield R2 (Ohms)
+    .placeholder = Enter the value of Battery Shield R2
+
+firmware_tool-add_imus_step = Declare your IMUs
+firmware_tool-add_imus_step-description =
+    Please add the IMUs that your tracker has
+    If you followed the SlimeVR documentation the defaults values should be correct
+firmware_tool-add_imus_step-imu_type-label = IMU type
+firmware_tool-add_imus_step-imu_type-placeholder = Select the type of IMU
+firmware_tool-add_imus_step-imu_rotation =
+    .label = IMU Rotation (deg)
+    .placeholder = Rotation angle of the IMU
+firmware_tool-add_imus_step-scl_pin =
+    .label = SCL Pin
+    .placeholder = Pin address of SCL
+firmware_tool-add_imus_step-sda_pin =
+    .label = SDA Pin
+    .placeholder = Pin address of SDA
+firmware_tool-add_imus_step-int_pin =
+    .label = INT Pin
+    .placeholder = Pin address of INT
+firmware_tool-add_imus_step-optional_tracker =
+    .label = Optional tracker
+firmware_tool-add_imus_step-show_less = Show Less
+firmware_tool-add_imus_step-show_more = Show More
+firmware_tool-add_imus_step-add_more = Add more IMUs
+
+firmware_tool-select_firmware_step = Select the firmware version
+firmware_tool-select_firmware_step-description =
+    Please choose what version of the firmware you want to use
+firmware_tool-select_firmware_step-show-third-party =
+    .label = Show third party firmwares
+
+firmware_tool-flash_method_step = Flashing Method
+firmware_tool-flash_method_step-description =
+    Please select the flashing method you want to use
+firmware_tool-flash_method_step-ota =
+    .label = OTA
+    .description = Use the over the air method. Your tracker will use the Wi-Fi to update it's firmware. Works only on already setup trackers.
+firmware_tool-flash_method_step-serial =
+    .label = Serial
+    .description = Use a USB cable to update your tracker.
+
+firmware_tool-flashbtn_step = Press the boot btn
+firmware_tool-flashbtn_step-description = Before going into the next step there is a few things you need to do
+
+firmware_tool-flashbtn_step-board_SLIMEVR = Turn off the tracker, remove the case (if any), connect a USB cable to this computer, then do one of the following steps according to your SlimeVR board revision:
+firmware_tool-flashbtn_step-board_SLIMEVR-r11 = Turn on the tracker while shorting the second rectangular FLASH pad from the edge on the top side of the board, and the metal shield of the microcontroller
+firmware_tool-flashbtn_step-board_SLIMEVR-r12 = Turn on the tracker while shorting the circular FLASH pad on the top side of the board, and the metal shield of the microcontroller
+firmware_tool-flashbtn_step-board_SLIMEVR-r14 = Turn on the tracker while pushing in the FLASH button on the top side of the board
+
+firmware_tool-flashbtn_step-board_OTHER = Before flashing you will probably need to put the tracker into bootloader mode.
+    Most of the time it means pressing the boot button on the board before the flashing process starts.
+    If the flashing process timeout at the begining of the flashing it probably means that the tracker was not in bootloader mode
+    Please refer to the flashing instructions of your board to know how to turn on the boatloader mode
+
+
+
+firmware_tool-flash_method_ota-devices = Detected OTA Devices:
+firmware_tool-flash_method_ota-no_devices = There are no boards that can be updated using OTA, make sure you selected the correct board type
+firmware_tool-flash_method_serial-wifi = Wi-Fi Credentials:
+firmware_tool-flash_method_serial-devices-label = Detected Serial Devices:
+firmware_tool-flash_method_serial-devices-placeholder = Select a serial device
+firmware_tool-flash_method_serial-no_devices = There are no compatible serial devices detected, make sure the tracker is plugged in
+
+firmware_tool-build_step = Building
+firmware_tool-build_step-description =
+    The firmware is building, please wait
+
+firmware_tool-flashing_step = Flashing
+firmware_tool-flashing_step-description =
+    Your trackers are flashing, please follow the instructions on the screen
+firmware_tool-flashing_step-warning-v2 = Do not unplug or turn off the tracker during the upload process unless told to, it may make your board unusable
+firmware_tool-flashing_step-flash_more = Flash more trackers
+firmware_tool-flashing_step-exit = Exit
 
 
 ## firmware tool build status
+firmware_tool-build-CREATING_BUILD_FOLDER = Creating the build folder
+firmware_tool-build-DOWNLOADING_FIRMWARE = Downloading the firmware
+firmware_tool-build-EXTRACTING_FIRMWARE = Extracting the firmware
+firmware_tool-build-SETTING_UP_DEFINES = Configuring the defines
+firmware_tool-build-BUILDING = Building the firmware
+firmware_tool-build-SAVING = Saving the build
+firmware_tool-build-DONE = Build Complete
+firmware_tool-build-ERROR = Unable to build the firmware
 
 
 ## Firmware update status
-
+firmware_update-status-DOWNLOADING = ファームウエアダウンロード
+firmware_update-status-NEED_MANUAL_REBOOT-v2 = トラッカーの電源をオフにしてから再度オンにしてください
+firmware_update-status-AUTHENTICATING = MCUによる認証
+firmware_update-status-UPLOADING = ファームウェアアップロード
+firmware_update-status-SYNCING_WITH_MCU = MCUとの同期
+firmware_update-status-REBOOTING = アップデートの適用
+firmware_update-status-PROVISIONING = Wi-Fi認証情報の設定
+firmware_update-status-DONE = 更新完了
+firmware_update-status-ERROR_DEVICE_NOT_FOUND = デバイスが見つかりませんでした
+firmware_update-status-ERROR_TIMEOUT = 更新プロセスがタイムアウトしました
+firmware_update-status-ERROR_DOWNLOAD_FAILED = ファームウェアのダウンロードに失敗しました
+firmware_update-status-ERROR_AUTHENTICATION_FAILED = MCUで認証できませんでした
+firmware_update-status-ERROR_UPLOAD_FAILED = ファームウェアのアップロードに失敗しました
+firmware_update-status-ERROR_PROVISIONING_FAILED = Wi-Fi認証情報を設定できませんでした
+firmware_update-status-ERROR_UNSUPPORTED_METHOD = 更新方法はサポートされていません
+firmware_update-status-ERROR_UNKNOWN = 不明なエラー
 
 ## Dedicated Firmware Update Page
-
+firmware_update-title = ファームウェア更新
+firmware_update-devices = 利用可能なデバイス
+firmware_update-devices-description = SlimeVR ファームウェアの最新バージョンに更新するトラッカーを選択してください。
+firmware_update-no_devices = Please make sure that the trackers you want to update are ON and connected to the Wi-Fi!
+firmware_update-changelog-title = Updating to {$version}
+firmware_update-looking_for_devices = Looking for devices to update...
+firmware_update-retry = Retry
+firmware_update-update = Update Selected Trackers
+firmware_update-exit = Exit
 
 ## Tray Menu
-
-tray_menu-show = ショー
-tray_menu-hide = 隠す
-tray_menu-quit = 辞める
+tray_menu-show = 表示
+tray_menu-hide = 非表示
+tray_menu-quit = 終了
 
 ## First exit modal
+tray_or_exit_modal-title = 終了ボタンの動作を設定してください
+tray_or_exit_modal-submit = 保存
+tray_or_exit_modal-cancel = キャンセル
 
-tray_or_exit_modal-submit = セーブ
+# Multiline text
+tray_or_exit_modal-description = 閉じるボタンをクリックしたときにサーバーを終了するか、トレイに最小化するかを選択します。
+
+    設定から後で変更できます。
+tray_or_exit_modal-radio-exit = 終了
+tray_or_exit_modal-radio-tray = システムトレイに最小化
+tray_or_exit_modal-submit = 保存
 tray_or_exit_modal-cancel = キャンセル
 
 ## Unknown device modal
+unknown_device-modal-title = トラッカーを検出しました
+unknown_device-modal-description = MACアドレス上でトラッカーを検出しました <b>{$deviceId}</b>.
+    SlimeVRに接続しますか?
+unknown_device-modal-confirm = はい
+unknown_device-modal-forget = いいえ
 
-unknown_device-modal-confirm = もちろん!
-unknown_device-modal-forget = 無視する
+# VRChat config warnings
+vrc_config-page-title = VRChatの設定に関する警告
+vrc_config-page-desc = このページでは、VRChatの設定状態と、SlimeVRと互換性のない設定が表示されます。SlimeVRを快適にご利用いただくために、ここに表示される警告はすべて修正することを強くお勧めします。
+vrc_config-page-help = 設定が見つかりませんか？
+vrc_config-page-help-desc = この内容に関しては <a>ドキュメントを参考にしてください</a>
+vrc_config-page-big_menu = Tracking & IK (Big Menu)
+vrc_config-page-big_menu-desc = Settings related to IK in the big settings menu
+vrc_config-page-wrist_menu = Tracking & IK (Wrist Menu)
+vrc_config-page-wrist_menu-desc = Settings related to IK in small settings menu (wrist menu)
+vrc_config-on = オン
+vrc_config-off = オフ
+vrc_config-invalid = VRChat上での設定が適切ではありません
+vrc_config-show_more = Show more
+vrc_config-setting_name = VRChat Setting name
+vrc_config-recommended_value = Recommended Value
+vrc_config-current_value = Current Value
+vrc_config-mute = 警告非表示
+vrc_config-mute-btn = 非表示
+vrc_config-unmute-btn = 表示
+vrc_config-legacy_mode = Use Legacy IK Solving
+vrc_config-disable_shoulder_tracking = 肩のトラッキングを無効
+vrc_config-shoulder_width_compensation = 肩幅補正
+vrc_config-spine_mode = FBT Spine Mode
+vrc_config-tracker_model = FBT Tracker Model
+vrc_config-avatar_measurement_type = Avatar Measurement
+vrc_config-calibration_range = Calibration Range
+vrc_config-calibration_visuals = Display Calibration Visuals
+vrc_config-user_height = 身長
+
+vrc_config-spine_mode-UNKNOWN = 不明
+vrc_config-spine_mode-LOCK_BOTH = Lock Both
+vrc_config-spine_mode-LOCK_HEAD = Lock Head
+vrc_config-spine_mode-LOCK_HIP = Lock Hip
+
+vrc_config-tracker_model-UNKNOWN = 不明
+vrc_config-tracker_model-AXIS = Axis
+vrc_config-tracker_model-BOX = ボックス
+vrc_config-tracker_model-SPHERE = 球体
+vrc_config-tracker_model-SYSTEM = システム
+
+vrc_config-avatar_measurement_type-UNKNOWN = 不明
+vrc_config-avatar_measurement_type-HEIGHT = Height
+vrc_config-avatar_measurement_type-ARM_SPAN = Arm Span
 
 ## Error collection consent modal
+error_collection_modal-title = 動作エラーのデータ収集に同意しますか？
+error_collection_modal-description_v2 = { settings-interface-behavior-error_tracking-description_v2 }
 
+    この設定は、後で設定画面で変更できます。
+error_collection_modal-confirm = 同意する
+error_collection_modal-cancel = 同意しない
